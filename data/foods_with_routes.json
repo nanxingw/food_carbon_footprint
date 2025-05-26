@@ -1,0 +1,1512 @@
+[
+    {
+        "name": "鸡肉",
+        "production_co2_per_kg": 10.89,
+        "routes": [
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "菲律宾",
+                "destination_lat": 12.8797,
+                "destination_lon": 121.774,
+                "distance_km": 4625.24,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 8255.03,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 4313.14,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 6569.03,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "香蕉",
+        "production_co2_per_kg": 0.46,
+        "routes": [
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "印度尼西亚",
+                "destination_lat": -0.7893,
+                "destination_lon": 113.9213,
+                "distance_km": 14810.23,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 8475.81,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "俄罗斯",
+                "destination_lat": 61.524,
+                "destination_lon": 105.3188,
+                "distance_km": 8680.96,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 2063.43,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "土豆",
+        "production_co2_per_kg": 0.17,
+        "routes": [
+            {
+                "origin_country": "法国",
+                "origin_lat": 46.6033,
+                "origin_lon": 1.8883,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 6792.43,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "法国",
+                "origin_lat": 46.6033,
+                "origin_lon": 1.8883,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 10081.11,
+                "transport_mode": "land_train"
+            }
+        ]
+    },
+    {
+        "name": "菠菜",
+        "production_co2_per_kg": 0.84,
+        "routes": [
+            {
+                "origin_country": "泰国",
+                "origin_lat": 15.87,
+                "origin_lon": 100.9925,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 19155.28,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "泰国",
+                "origin_lat": 15.87,
+                "origin_lon": 100.9925,
+                "destination_country": "巴西",
+                "destination_lat": -14.235,
+                "destination_lon": -51.9253,
+                "distance_km": 17103.31,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "泰国",
+                "origin_lat": 15.87,
+                "origin_lon": 100.9925,
+                "destination_country": "中国",
+                "destination_lat": 35.8617,
+                "destination_lon": 104.1954,
+                "distance_km": 2245.56,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "越南",
+                "origin_lat": 14.0583,
+                "origin_lon": 108.2772,
+                "destination_country": "菲律宾",
+                "destination_lat": 12.8797,
+                "destination_lon": 121.774,
+                "distance_km": 1465.16,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "越南",
+                "origin_lat": 14.0583,
+                "origin_lon": 108.2772,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 13614.23,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "意大利",
+                "origin_lat": 41.8719,
+                "origin_lon": 12.5674,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 7705.26,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "意大利",
+                "origin_lat": 41.8719,
+                "origin_lon": 12.5674,
+                "destination_country": "法国",
+                "destination_lat": 46.6033,
+                "destination_lon": 1.8883,
+                "distance_km": 998.99,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "意大利",
+                "origin_lat": 41.8719,
+                "origin_lon": 12.5674,
+                "destination_country": "新西兰",
+                "destination_lat": -40.9006,
+                "destination_lon": 174.886,
+                "distance_km": 18538.67,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "意大利",
+                "origin_lat": 41.8719,
+                "origin_lon": 12.5674,
+                "destination_country": "印度尼西亚",
+                "destination_lat": -0.7893,
+                "destination_lon": 113.9213,
+                "distance_km": 11004.06,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "意大利",
+                "origin_lat": 41.8719,
+                "origin_lon": 12.5674,
+                "destination_country": "西班牙",
+                "destination_lat": 40.4637,
+                "destination_lon": -3.7492,
+                "distance_km": 1372.63,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "胡萝卜",
+        "production_co2_per_kg": 0.48,
+        "routes": [
+            {
+                "origin_country": "南非",
+                "origin_lat": -30.5595,
+                "origin_lon": 22.9375,
+                "destination_country": "韩国",
+                "destination_lat": 35.9078,
+                "destination_lon": 127.7669,
+                "distance_km": 13173.25,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "南非",
+                "origin_lat": -30.5595,
+                "origin_lon": 22.9375,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 4796.17,
+                "transport_mode": "sea"
+            }
+        ]
+    },
+    {
+        "name": "奶酪",
+        "production_co2_per_kg": 6.65,
+        "routes": [
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 2333.97,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "菲律宾",
+                "destination_lat": 12.8797,
+                "destination_lon": 121.774,
+                "distance_km": 1749.41,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 1764.11,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "印度",
+                "destination_lat": 20.5937,
+                "destination_lon": 78.9629,
+                "distance_km": 4485.0,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "西红柿",
+        "production_co2_per_kg": 0.48,
+        "routes": [
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 8475.81,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 13614.23,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "美国",
+                "origin_lat": 38.9637,
+                "origin_lon": -95.7129,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 7701.58,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 14615.36,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "俄罗斯",
+                "destination_lat": 61.524,
+                "destination_lon": 105.3188,
+                "distance_km": 10222.48,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "法国",
+                "destination_lat": 46.6033,
+                "destination_lon": 1.8883,
+                "distance_km": 9149.11,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "埃及",
+                "destination_lat": 26.8206,
+                "destination_lon": 30.8025,
+                "distance_km": 12493.63,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 14931.65,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "面包",
+        "production_co2_per_kg": 1.8,
+        "routes": [
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "智利",
+                "destination_lat": -35.6751,
+                "destination_lon": -71.543,
+                "distance_km": 12513.96,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 7701.58,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "埃及",
+                "destination_lat": 26.8206,
+                "destination_lon": 30.8025,
+                "distance_km": 3204.51,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "哥伦比亚",
+                "destination_lat": 4.5709,
+                "destination_lon": -74.2973,
+                "distance_km": 9245.76,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "韩国",
+                "destination_lat": 35.9078,
+                "destination_lon": 127.7669,
+                "distance_km": 2630.0,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 13062.07,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 18137.94,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "中国",
+                "destination_lat": 35.8617,
+                "destination_lon": 104.1954,
+                "distance_km": 3102.75,
+                "transport_mode": "land_train"
+            }
+        ]
+    },
+    {
+        "name": "咖啡豆",
+        "production_co2_per_kg": 0.77,
+        "routes": [
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 8846.26,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 10317.57,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "智利",
+                "destination_lat": -35.6751,
+                "destination_lon": -71.543,
+                "distance_km": 17150.39,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 13062.07,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "菲律宾",
+                "origin_lat": 12.8797,
+                "origin_lon": 121.774,
+                "destination_country": "西班牙",
+                "destination_lat": 40.4637,
+                "destination_lon": -3.7492,
+                "distance_km": 11857.31,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 10725.76,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "澳大利亚",
+                "destination_lat": -25.2744,
+                "destination_lon": 133.7751,
+                "distance_km": 12734.13,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 8662.65,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "新西兰",
+                "destination_lat": -40.9006,
+                "destination_lon": 174.886,
+                "distance_km": 9136.39,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "巴西",
+                "destination_lat": -14.235,
+                "destination_lon": -51.9253,
+                "distance_km": 3084.19,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "埃及",
+                "destination_lat": 26.8206,
+                "destination_lon": 30.8025,
+                "distance_km": 4923.56,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "日本",
+                "destination_lat": 36.2048,
+                "destination_lon": 138.2529,
+                "distance_km": 5959.3,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "肯尼亚",
+                "destination_lat": -0.0236,
+                "destination_lon": 37.9062,
+                "distance_km": 5016.17,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 3190.29,
+                "transport_mode": "land_truck"
+            }
+        ]
+    },
+    {
+        "name": "西兰花",
+        "production_co2_per_kg": 1.23,
+        "routes": [
+            {
+                "origin_country": "新西兰",
+                "origin_lat": -40.9006,
+                "origin_lon": 174.886,
+                "destination_country": "日本",
+                "destination_lat": 36.2048,
+                "destination_lon": 138.2529,
+                "distance_km": 9352.17,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "新西兰",
+                "origin_lat": -40.9006,
+                "origin_lon": 174.886,
+                "destination_country": "墨西哥",
+                "destination_lat": 23.6345,
+                "destination_lon": -102.5528,
+                "distance_km": 11114.27,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "新西兰",
+                "origin_lat": -40.9006,
+                "origin_lon": 174.886,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 11284.4,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "新西兰",
+                "destination_lat": -40.9006,
+                "destination_lon": 174.886,
+                "distance_km": 11114.27,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 4720.12,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "燕麦",
+        "production_co2_per_kg": 1.13,
+        "routes": [
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 4905.06,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "俄罗斯",
+                "destination_lat": 61.524,
+                "destination_lon": 105.3188,
+                "distance_km": 12665.59,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 10957.9,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "墨西哥",
+                "destination_lat": 23.6345,
+                "destination_lon": -102.5528,
+                "distance_km": 3696.56,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "法国",
+                "origin_lat": 46.6033,
+                "origin_lon": 1.8883,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 8836.96,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "法国",
+                "origin_lat": 46.6033,
+                "origin_lon": 1.8883,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 998.99,
+                "transport_mode": "land_truck"
+            }
+        ]
+    },
+    {
+        "name": "芒果",
+        "production_co2_per_kg": 0.98,
+        "routes": [
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "印度",
+                "destination_lat": 20.5937,
+                "destination_lon": 78.9629,
+                "distance_km": 4485.0,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "哥伦比亚",
+                "destination_lat": 4.5709,
+                "destination_lon": -74.2973,
+                "distance_km": 19010.18,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 11004.06,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 2333.97,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "生菜",
+        "production_co2_per_kg": 0.32,
+        "routes": [
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "土耳其",
+                "destination_lat": 38.9637,
+                "destination_lon": 35.2433,
+                "distance_km": 2354.71,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 6750.72,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "韩国",
+                "destination_lat": 35.9078,
+                "destination_lon": 127.7669,
+                "distance_km": 8569.68,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "德国",
+                "origin_lat": 51.1657,
+                "origin_lon": 10.4515,
+                "destination_country": "西班牙",
+                "destination_lat": 40.4637,
+                "destination_lon": -3.7492,
+                "distance_km": 1615.38,
+                "transport_mode": "sea"
+            }
+        ]
+    },
+    {
+        "name": "草莓",
+        "production_co2_per_kg": 1.47,
+        "routes": [
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "日本",
+                "destination_lat": 36.2048,
+                "destination_lon": 138.2529,
+                "distance_km": 17342.61,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "澳大利亚",
+                "destination_lat": -25.2744,
+                "destination_lon": 133.7751,
+                "distance_km": 12734.13,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "印度",
+                "destination_lat": 20.5937,
+                "destination_lon": 78.9629,
+                "distance_km": 16691.81,
+                "transport_mode": "land_train"
+            }
+        ]
+    },
+    {
+        "name": "鹰嘴豆",
+        "production_co2_per_kg": 1.06,
+        "routes": [
+            {
+                "origin_country": "厄瓜多尔",
+                "origin_lat": -1.8312,
+                "origin_lon": -78.1834,
+                "destination_country": "中国",
+                "destination_lat": 35.8617,
+                "destination_lon": 104.1954,
+                "distance_km": 16223.13,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "厄瓜多尔",
+                "origin_lat": -1.8312,
+                "origin_lon": -78.1834,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 18481.25,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "厄瓜多尔",
+                "origin_lat": -1.8312,
+                "origin_lon": -78.1834,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 10071.0,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "厄瓜多尔",
+                "origin_lat": -1.8312,
+                "origin_lon": -78.1834,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 4329.96,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "厄瓜多尔",
+                "origin_lat": -1.8312,
+                "origin_lon": -78.1834,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 13186.69,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "肯尼亚",
+                "destination_lat": -0.0236,
+                "destination_lon": 37.9062,
+                "distance_km": 8452.61,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "哥伦比亚",
+                "destination_lat": 4.5709,
+                "destination_lon": -74.2973,
+                "distance_km": 19010.18,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 15648.36,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "埃塞俄比亚",
+                "origin_lat": 9.145,
+                "origin_lon": 40.4897,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 7381.15,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "埃塞俄比亚",
+                "origin_lat": 9.145,
+                "origin_lon": 40.4897,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 5417.3,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "埃塞俄比亚",
+                "origin_lat": 9.145,
+                "origin_lon": 40.4897,
+                "destination_country": "俄罗斯",
+                "destination_lat": 61.524,
+                "destination_lon": 105.3188,
+                "distance_km": 7797.9,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "埃塞俄比亚",
+                "origin_lat": 9.145,
+                "origin_lon": 40.4897,
+                "destination_country": "埃及",
+                "destination_lat": 26.8206,
+                "destination_lon": 30.8025,
+                "distance_km": 2213.91,
+                "transport_mode": "land_train"
+            }
+        ]
+    },
+    {
+        "name": "小麦",
+        "production_co2_per_kg": 2.76,
+        "routes": [
+            {
+                "origin_country": "阿根廷",
+                "origin_lat": -38.4161,
+                "origin_lon": -63.6167,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 4329.96,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "阿根廷",
+                "origin_lat": -38.4161,
+                "origin_lon": -63.6167,
+                "destination_country": "澳大利亚",
+                "destination_lat": -25.2744,
+                "destination_lon": 133.7751,
+                "distance_km": 12704.79,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 3825.13,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "埃及",
+                "destination_lat": 26.8206,
+                "destination_lon": 30.8025,
+                "distance_km": 12755.92,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 17691.55,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 10725.76,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "智利",
+                "origin_lat": -35.6751,
+                "origin_lon": -71.543,
+                "destination_country": "土耳其",
+                "destination_lat": 38.9637,
+                "destination_lon": 35.2433,
+                "distance_km": 13711.24,
+                "transport_mode": "land_truck"
+            }
+        ]
+    },
+    {
+        "name": "玉米",
+        "production_co2_per_kg": 2.95,
+        "routes": [
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "巴西",
+                "destination_lat": -14.235,
+                "destination_lon": -51.9253,
+                "distance_km": 17730.56,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "澳大利亚",
+                "destination_lat": -25.2744,
+                "destination_lon": 133.7751,
+                "distance_km": 3457.43,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 9245.76,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 4391.74,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "哥伦比亚",
+                "origin_lat": 4.5709,
+                "origin_lon": -74.2973,
+                "destination_country": "澳大利亚",
+                "destination_lat": -25.2744,
+                "destination_lon": 133.7751,
+                "distance_km": 16238.32,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "橙子",
+        "production_co2_per_kg": 0.28,
+        "routes": [
+            {
+                "origin_country": "俄罗斯",
+                "origin_lat": 61.524,
+                "origin_lon": 105.3188,
+                "destination_country": "哥伦比亚",
+                "destination_lat": 4.5709,
+                "destination_lon": -74.2973,
+                "distance_km": 12665.59,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "俄罗斯",
+                "origin_lat": 61.524,
+                "origin_lon": 105.3188,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 14195.75,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "俄罗斯",
+                "origin_lat": 61.524,
+                "origin_lon": 105.3188,
+                "destination_country": "巴西",
+                "destination_lat": -14.235,
+                "destination_lon": -51.9253,
+                "distance_km": 14451.51,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "俄罗斯",
+                "origin_lat": 61.524,
+                "origin_lon": 105.3188,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 5088.12,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "俄罗斯",
+                "origin_lat": 61.524,
+                "origin_lon": 105.3188,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 5283.27,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 6569.03,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 16951.3,
+                "transport_mode": "sea"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 4313.14,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 3190.29,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "新西兰",
+                "destination_lat": -40.9006,
+                "destination_lon": 174.886,
+                "distance_km": 11167.19,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "墨西哥",
+                "destination_lat": 23.6345,
+                "destination_lon": -102.5528,
+                "distance_km": 12826.34,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "印度尼西亚",
+                "destination_lat": -0.7893,
+                "destination_lon": 113.9213,
+                "distance_km": 4198.13,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "哥伦比亚",
+                "destination_lat": 4.5709,
+                "destination_lon": -74.2973,
+                "distance_km": 15516.44,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 11237.05,
+                "transport_mode": "land_train"
+            }
+        ]
+    },
+    {
+        "name": "黑豆",
+        "production_co2_per_kg": 1.41,
+        "routes": [
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 16223.13,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "德国",
+                "destination_lat": 51.1657,
+                "destination_lon": 10.4515,
+                "distance_km": 7223.89,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 2458.41,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 18898.97,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "中国",
+                "origin_lat": 35.8617,
+                "origin_lon": 104.1954,
+                "destination_country": "智利",
+                "destination_lat": -35.6751,
+                "destination_lon": -71.543,
+                "distance_km": 19630.07,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "越南",
+                "destination_lat": 14.0583,
+                "destination_lon": 108.2772,
+                "distance_km": 14648.57,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 14591.7,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "墨西哥",
+                "origin_lat": 23.6345,
+                "origin_lon": -102.5528,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 3868.33,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "巴西",
+                "origin_lat": -14.235,
+                "origin_lon": -51.9253,
+                "destination_country": "秘鲁",
+                "destination_lat": -9.19,
+                "destination_lon": -75.0152,
+                "distance_km": 2574.26,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "巴西",
+                "origin_lat": -14.235,
+                "origin_lon": -51.9253,
+                "destination_country": "意大利",
+                "destination_lat": 41.8719,
+                "destination_lon": 12.5674,
+                "distance_km": 9069.63,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "巴西",
+                "origin_lat": -14.235,
+                "origin_lon": -51.9253,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 10513.97,
+                "transport_mode": "air"
+            }
+        ]
+    },
+    {
+        "name": "菠萝",
+        "production_co2_per_kg": 0.95,
+        "routes": [
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "美国",
+                "destination_lat": 38.9637,
+                "destination_lon": -95.7129,
+                "distance_km": 14810.23,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "印度尼西亚",
+                "origin_lat": -0.7893,
+                "origin_lon": 113.9213,
+                "destination_country": "中国",
+                "destination_lat": 35.8617,
+                "destination_lon": 104.1954,
+                "distance_km": 4198.13,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "韩国",
+                "origin_lat": 35.9078,
+                "origin_lon": 127.7669,
+                "destination_country": "加拿大",
+                "destination_lat": 56.1304,
+                "destination_lon": -106.3468,
+                "distance_km": 8578.93,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "韩国",
+                "origin_lat": 35.9078,
+                "origin_lon": 127.7669,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 18969.28,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "韩国",
+                "origin_lat": 35.9078,
+                "origin_lon": 127.7669,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 3462.21,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "韩国",
+                "origin_lat": 35.9078,
+                "origin_lon": 127.7669,
+                "destination_country": "法国",
+                "destination_lat": 46.6033,
+                "destination_lon": 1.8883,
+                "distance_km": 9369.31,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "韩国",
+                "origin_lat": 35.9078,
+                "origin_lon": 127.7669,
+                "destination_country": "埃塞俄比亚",
+                "destination_lat": 9.145,
+                "destination_lon": 40.4897,
+                "distance_km": 9169.26,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "中国",
+                "destination_lat": 35.8617,
+                "destination_lon": 104.1954,
+                "distance_km": 2983.79,
+                "transport_mode": "land_train"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "泰国",
+                "destination_lat": 15.87,
+                "destination_lon": 100.9925,
+                "distance_km": 2382.92,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "厄瓜多尔",
+                "destination_lat": -1.8312,
+                "destination_lon": -78.1834,
+                "distance_km": 16774.62,
+                "transport_mode": "land_truck"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "南非",
+                "destination_lat": -30.5595,
+                "destination_lon": 22.9375,
+                "distance_km": 8255.03,
+                "transport_mode": "air"
+            },
+            {
+                "origin_country": "印度",
+                "origin_lat": 20.5937,
+                "origin_lon": 78.9629,
+                "destination_country": "阿根廷",
+                "destination_lat": -38.4161,
+                "destination_lon": -63.6167,
+                "distance_km": 15926.66,
+                "transport_mode": "air"
+            }
+        ]
+    }
+]

@@ -1,0 +1,342 @@
+[
+    {
+        "name": "鸡肉",
+        "category": "protein_meat",
+        "production_co2_per_kg": 10.89,
+        "average_transport_co2_per_kg": 1.742,
+        "total_co2_per_kg": 12.632,
+        "nutrients_per_100g": {
+            "energy_kcal": 151,
+            "protein_g": 15.5,
+            "fat_g": 7.1,
+            "carbohydrate_g": 1.3,
+            "fiber_g": 0.3,
+            "calcium_mg": 48.98,
+            "iron_mg": 4.55
+        },
+        "average_consumer_waste_percentage": 0.24
+    },
+    {
+        "name": "香蕉",
+        "category": "fruit",
+        "production_co2_per_kg": 0.46,
+        "average_transport_co2_per_kg": 4.032,
+        "total_co2_per_kg": 4.492,
+        "nutrients_per_100g": {
+            "energy_kcal": 70,
+            "protein_g": 0.8,
+            "fat_g": 0.2,
+            "carbohydrate_g": 23.2,
+            "fiber_g": 1.5,
+            "calcium_mg": 6.58,
+            "iron_mg": 0.1
+        },
+        "average_consumer_waste_percentage": 0.39
+    },
+    {
+        "name": "土豆",
+        "category": "vegetable",
+        "production_co2_per_kg": 0.17,
+        "average_transport_co2_per_kg": 2.195,
+        "total_co2_per_kg": 2.365,
+        "nutrients_per_100g": {
+            "energy_kcal": 37,
+            "protein_g": 3.3,
+            "fat_g": 0.2,
+            "carbohydrate_g": 8.9,
+            "fiber_g": 6.0,
+            "calcium_mg": 37.95,
+            "iron_mg": 4.35
+        },
+        "average_consumer_waste_percentage": 0.33
+    },
+    {
+        "name": "菠菜",
+        "category": "vegetable",
+        "production_co2_per_kg": 0.84,
+        "average_transport_co2_per_kg": 0.952,
+        "total_co2_per_kg": 1.792,
+        "nutrients_per_100g": {
+            "energy_kcal": 68,
+            "protein_g": 4.7,
+            "fat_g": 0.9,
+            "carbohydrate_g": 12.7,
+            "fiber_g": 2.8,
+            "calcium_mg": 92.54,
+            "iron_mg": 3.48
+        },
+        "average_consumer_waste_percentage": 0.17
+    },
+    {
+        "name": "胡萝卜",
+        "category": "vegetable",
+        "production_co2_per_kg": 0.48,
+        "average_transport_co2_per_kg": 0.222,
+        "total_co2_per_kg": 0.702,
+        "nutrients_per_100g": {
+            "energy_kcal": 59,
+            "protein_g": 2.4,
+            "fat_g": 0.7,
+            "carbohydrate_g": 11.5,
+            "fiber_g": 6.9,
+            "calcium_mg": 145.05,
+            "iron_mg": 3.89
+        },
+        "average_consumer_waste_percentage": 0.38
+    },
+    {
+        "name": "奶酪",
+        "category": "dairy",
+        "production_co2_per_kg": 6.65,
+        "average_transport_co2_per_kg": 1.226,
+        "total_co2_per_kg": 7.876,
+        "nutrients_per_100g": {
+            "energy_kcal": 60,
+            "protein_g": 4.0,
+            "fat_g": 8.1,
+            "carbohydrate_g": 3.6,
+            "fiber_g": 0.0,
+            "calcium_mg": 113.97,
+            "iron_mg": 0.02
+        },
+        "average_consumer_waste_percentage": 0.17
+    },
+    {
+        "name": "西红柿",
+        "category": "vegetable",
+        "production_co2_per_kg": 0.48,
+        "average_transport_co2_per_kg": 2.486,
+        "total_co2_per_kg": 2.966,
+        "nutrients_per_100g": {
+            "energy_kcal": 36,
+            "protein_g": 2.1,
+            "fat_g": 0.1,
+            "carbohydrate_g": 7.7,
+            "fiber_g": 1.9,
+            "calcium_mg": 40.96,
+            "iron_mg": 4.63
+        },
+        "average_consumer_waste_percentage": 0.28
+    },
+    {
+        "name": "面包",
+        "category": "grain",
+        "production_co2_per_kg": 1.8,
+        "average_transport_co2_per_kg": 1.856,
+        "total_co2_per_kg": 3.656,
+        "nutrients_per_100g": {
+            "energy_kcal": 255,
+            "protein_g": 6.1,
+            "fat_g": 4.4,
+            "carbohydrate_g": 55.5,
+            "fiber_g": 2.2,
+            "calcium_mg": 38.32,
+            "iron_mg": 2.72
+        },
+        "average_consumer_waste_percentage": 0.09
+    },
+    {
+        "name": "咖啡豆",
+        "category": "other",
+        "production_co2_per_kg": 0.77,
+        "average_transport_co2_per_kg": 2.187,
+        "total_co2_per_kg": 2.957,
+        "nutrients_per_100g": {
+            "energy_kcal": 580,
+            "protein_g": 10.5,
+            "fat_g": 31.2,
+            "carbohydrate_g": 40.2,
+            "fiber_g": 2.5,
+            "calcium_mg": 35.96,
+            "iron_mg": 9.57
+        },
+        "average_consumer_waste_percentage": 0.14
+    },
+    {
+        "name": "西兰花",
+        "category": "vegetable",
+        "production_co2_per_kg": 1.23,
+        "average_transport_co2_per_kg": 2.042,
+        "total_co2_per_kg": 3.272,
+        "nutrients_per_100g": {
+            "energy_kcal": 53,
+            "protein_g": 4.1,
+            "fat_g": 0.4,
+            "carbohydrate_g": 8.4,
+            "fiber_g": 5.2,
+            "calcium_mg": 198.46,
+            "iron_mg": 4.37
+        },
+        "average_consumer_waste_percentage": 0.25
+    },
+    {
+        "name": "燕麦",
+        "category": "grain",
+        "production_co2_per_kg": 1.13,
+        "average_transport_co2_per_kg": 1.366,
+        "total_co2_per_kg": 2.496,
+        "nutrients_per_100g": {
+            "energy_kcal": 149,
+            "protein_g": 4.3,
+            "fat_g": 3.9,
+            "carbohydrate_g": 48.1,
+            "fiber_g": 2.2,
+            "calcium_mg": 61.01,
+            "iron_mg": 4.03
+        },
+        "average_consumer_waste_percentage": 0.11
+    },
+    {
+        "name": "芒果",
+        "category": "fruit",
+        "production_co2_per_kg": 0.98,
+        "average_transport_co2_per_kg": 0.522,
+        "total_co2_per_kg": 1.502,
+        "nutrients_per_100g": {
+            "energy_kcal": 30,
+            "protein_g": 0.1,
+            "fat_g": 0.7,
+            "carbohydrate_g": 9.8,
+            "fiber_g": 2.5,
+            "calcium_mg": 43.72,
+            "iron_mg": 0.19
+        },
+        "average_consumer_waste_percentage": 0.16
+    },
+    {
+        "name": "生菜",
+        "category": "vegetable",
+        "production_co2_per_kg": 0.32,
+        "average_transport_co2_per_kg": 1.416,
+        "total_co2_per_kg": 1.736,
+        "nutrients_per_100g": {
+            "energy_kcal": 77,
+            "protein_g": 4.2,
+            "fat_g": 0.8,
+            "carbohydrate_g": 5.5,
+            "fiber_g": 1.5,
+            "calcium_mg": 101.25,
+            "iron_mg": 2.01
+        },
+        "average_consumer_waste_percentage": 0.31
+    },
+    {
+        "name": "草莓",
+        "category": "fruit",
+        "production_co2_per_kg": 1.47,
+        "average_transport_co2_per_kg": 2.813,
+        "total_co2_per_kg": 4.283,
+        "nutrients_per_100g": {
+            "energy_kcal": 32,
+            "protein_g": 1.6,
+            "fat_g": 0.1,
+            "carbohydrate_g": 24.9,
+            "fiber_g": 4.1,
+            "calcium_mg": 28.99,
+            "iron_mg": 0.55
+        },
+        "average_consumer_waste_percentage": 0.25
+    },
+    {
+        "name": "鹰嘴豆",
+        "category": "protein_plant",
+        "production_co2_per_kg": 1.06,
+        "average_transport_co2_per_kg": 2.119,
+        "total_co2_per_kg": 3.179,
+        "nutrients_per_100g": {
+            "energy_kcal": 154,
+            "protein_g": 5.9,
+            "fat_g": 3.9,
+            "carbohydrate_g": 13.3,
+            "fiber_g": 11.5,
+            "calcium_mg": 214.63,
+            "iron_mg": 4.74
+        },
+        "average_consumer_waste_percentage": 0.07
+    },
+    {
+        "name": "小麦",
+        "category": "grain",
+        "production_co2_per_kg": 2.76,
+        "average_transport_co2_per_kg": 3.76,
+        "total_co2_per_kg": 6.52,
+        "nutrients_per_100g": {
+            "energy_kcal": 204,
+            "protein_g": 7.6,
+            "fat_g": 1.3,
+            "carbohydrate_g": 28.0,
+            "fiber_g": 6.1,
+            "calcium_mg": 98.91,
+            "iron_mg": 1.37
+        },
+        "average_consumer_waste_percentage": 0.06
+    },
+    {
+        "name": "玉米",
+        "category": "grain",
+        "production_co2_per_kg": 2.95,
+        "average_transport_co2_per_kg": 2.334,
+        "total_co2_per_kg": 5.284,
+        "nutrients_per_100g": {
+            "energy_kcal": 281,
+            "protein_g": 10.9,
+            "fat_g": 4.7,
+            "carbohydrate_g": 38.6,
+            "fiber_g": 2.4,
+            "calcium_mg": 63.11,
+            "iron_mg": 2.33
+        },
+        "average_consumer_waste_percentage": 0.07
+    },
+    {
+        "name": "橙子",
+        "category": "fruit",
+        "production_co2_per_kg": 0.28,
+        "average_transport_co2_per_kg": 2.022,
+        "total_co2_per_kg": 2.302,
+        "nutrients_per_100g": {
+            "energy_kcal": 75,
+            "protein_g": 0.4,
+            "fat_g": 0.4,
+            "carbohydrate_g": 6.3,
+            "fiber_g": 4.6,
+            "calcium_mg": 43.16,
+            "iron_mg": 0.84
+        },
+        "average_consumer_waste_percentage": 0.3
+    },
+    {
+        "name": "黑豆",
+        "category": "protein_plant",
+        "production_co2_per_kg": 1.41,
+        "average_transport_co2_per_kg": 3.657,
+        "total_co2_per_kg": 5.067,
+        "nutrients_per_100g": {
+            "energy_kcal": 131,
+            "protein_g": 9.7,
+            "fat_g": 6.6,
+            "carbohydrate_g": 20.1,
+            "fiber_g": 4.0,
+            "calcium_mg": 169.17,
+            "iron_mg": 7.2
+        },
+        "average_consumer_waste_percentage": 0.1
+    },
+    {
+        "name": "菠萝",
+        "category": "fruit",
+        "production_co2_per_kg": 0.95,
+        "average_transport_co2_per_kg": 2.568,
+        "total_co2_per_kg": 3.518,
+        "nutrients_per_100g": {
+            "energy_kcal": 42,
+            "protein_g": 1.3,
+            "fat_g": 0.8,
+            "carbohydrate_g": 5.7,
+            "fiber_g": 2.5,
+            "calcium_mg": 43.92,
+            "iron_mg": 0.41
+        },
+        "average_consumer_waste_percentage": 0.38
+    }
+]

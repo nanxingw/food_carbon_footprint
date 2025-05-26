@@ -1,0 +1,174 @@
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Consistent with index.html */
+    margin: 0;
+    padding: 0;
+    background-color: #e8f5e9; /* Light green background from index.html */
+    color: #1b5e20; /* Dark green text from index.html */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    /* Styles for header will be more specifically handled in food_explorer.html's <style> tag 
+       to match index.html's detailed header, or these could be made more generic and detailed here. 
+       For now, ensuring a basic green theme for subpages if they don't override. */
+    background: linear-gradient(135deg, #1b5e20 0%, #4caf50 100%); /* Default green gradient */
+    color: white;
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
+    border-bottom: #66bb6a 3px solid; /* Medium green border, slightly thinner */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Adjusted for sub-pages, can be fine-tuned */
+    font-weight: 700;
+}
+
+header p {
+    margin: 0.5em 0 0;
+    font-size: 1.1em; /* Adjusted for sub-pages */
+    opacity: 0.9;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1300px; /* Slightly increased max-width */
+    margin: 20px auto;
+    width: 95%;
+    background-color: #ffffff; /* White background for content area */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Softer shadow */
+    border-radius: 8px;
+}
+
+.controls {
+    display: flex;
+    gap: 25px; /* Slightly increased gap */
+    margin-bottom: 25px; /* Slightly increased margin */
+    padding: 20px;
+    background-color: #f0f4f0; /* Very light green/grey for subtle contrast */
+    border-radius: 6px;
+    border: 1px solid #dce5dc; /* Softer border */
+}
+
+.controls div {
+    flex: 1;
+}
+
+.controls label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin */
+    font-weight: bold;
+    color: #1b5e20; /* Dark green text */
+}
+
+.controls select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c5d5c5; /* Greenish border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+.controls select:focus {
+    border-color: #4caf50; /* Green focus */
+    outline: none;
+}
+
+.visualization-area {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    min-height: 480px; /* Adjusted height */
+    height: 480px; /* 添加固定高度，防止无限增长 */
+}
+
+#map-container {
+    flex: 3;
+    border: 1px solid #dce5dc;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #e6f0e6; /* Light green background for map area */
+}
+
+#map {
+    height: 100%; /* Make map fill container */
+    min-height: 460px; /* Ensure it has a good minimum height */
+    width: 100%;
+}
+
+#chart-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column; /* Allow title and chart */
+    align-items: center;
+    justify-content: flex-start; /* Align title to top */
+    padding: 20px;
+    border: 1px solid #dce5dc;
+    border-radius: 6px;
+    background-color: #f8fbf8; /* Very light green for chart background */
+    overflow: hidden; /* 防止内容溢出 */
+}
+#chart-container h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #1b5e20;
+    text-align: center;
+}
+
+#carbon-chart {
+    max-width: 100%;
+    height: 400px; /* 设置固定高度而不是max-height */
+    width: 100%; /* 确保宽度填满容器 */
+}
+
+.info-panel {
+    padding: 20px;
+    background-color: #e0f0e0; /* Light green for info panel */
+    border-radius: 6px;
+    border: 1px solid #c0dcc0; /* Softer green border */
+}
+
+.info-panel h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #104010; /* Darker green for info panel title */
+    font-size: 1.3em;
+}
+
+#info-content p {
+    margin: 8px 0;
+    line-height: 1.7;
+    color: #2e7d32; /* Consistent dark green for text */
+}
+
+footer {
+    background-color: #1b5e20; /* Darkest green from index.html */
+    color: #e8f5e9; /* Light green text from index.html */
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+    }
+    .visualization-area {
+        flex-direction: column;
+    }
+    #map-container, #chart-container {
+        flex: none; /* Reset flex behavior */
+        width: 100%;
+    }
+    #map {
+        height: 350px; /* Adjust height for smaller screens */
+    }
+}

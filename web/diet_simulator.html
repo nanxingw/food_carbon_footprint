@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饮食碳足迹模拟器 - 舌尖上的足迹</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 美化的导航栏 */
+        .navigation-link-container {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .navigation-link-container a {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+        }
+        
+        .navigation-link-container a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%);
+        }
+
+        /* 饮食选择卡片 */
+        .diet-selector-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .diet-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .diet-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(76, 175, 80, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .diet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .diet-card.selected {
+            border-color: #4caf50;
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+        }
+
+        .diet-card.selected::before {
+            opacity: 1;
+        }
+
+        .diet-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .diet-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        .diet-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .diet-carbon-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4caf50;
+            margin-top: 15px;
+        }
+
+        /* 统计卡片 */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stat-change {
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .positive-change {
+            color: #4caf50;
+        }
+
+        .negative-change {
+            color: #f44336;
+        }
+
+        /* 图表容器 */
+        .visualization-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .chart-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chart-box h3 {
+            margin: 0 0 20px 0;
+            color: #1b5e20;
+            font-size: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .chart-box canvas {
+            flex: 1;
+            min-height: 0;
+            max-height: 350px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* 信息面板 */
+        .info-panel-enhanced {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-panel-enhanced h3 {
+            color: #1565c0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .tip-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tip-title {
+            font-weight: 600;
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .diet-selector-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .visualization-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* 加载动画 */
+        .loading-spinner {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4caf50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>饮食碳足迹模拟器</h1>
+        <p>探索不同饮食习惯对环境的影响，找到适合您的低碳饮食方案</p>
+    </header>
+
+    <div class="navigation-link-container">
+        <a href="index.html">🏠 返回主导航页</a>
+    </div>
+
+    <main>
+        <!-- 饮食选择卡片 -->
+        <div class="diet-selector-container">
+            <div class="diet-card" data-diet="high_meat">
+                <span class="diet-icon">🥩</span>
+                <div class="diet-title">高肉食饮食</div>
+                <div class="diet-description">每天摄入大量肉类，包括牛肉、猪肉等</div>
+                <div class="diet-carbon-value">~3.3 吨 CO₂/年</div>
+            </div>
+            
+            <div class="diet-card" data-diet="balanced">
+                <span class="diet-icon">🍽️</span>
+                <div class="diet-title">均衡饮食</div>
+                <div class="diet-description">适量肉类搭配蔬菜、谷物，营养均衡</div>
+                <div class="diet-carbon-value">~2.5 吨 CO₂/年</div>
+            </div>
+            
+            <div class="diet-card" data-diet="vegetarian">
+                <span class="diet-icon">🥗</span>
+                <div class="diet-title">素食饮食</div>
+                <div class="diet-description">不吃肉类，但包含蛋类和乳制品</div>
+                <div class="diet-carbon-value">~1.7 吨 CO₂/年</div>
+            </div>
+            
+            <div class="diet-card" data-diet="vegan">
+                <span class="diet-icon">🌱</span>
+                <div class="diet-title">纯素饮食</div>
+                <div class="diet-description">完全植物性饮食，不含任何动物产品</div>
+                <div class="diet-carbon-value">~1.5 吨 CO₂/年</div>
+            </div>
+        </div>
+
+        <!-- 统计信息 -->
+        <div class="stats-container" id="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="annual-carbon">0</div>
+                <div class="stat-label">年碳排放 (吨)</div>
+                <div class="stat-change" id="carbon-change"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="daily-carbon">0</div>
+                <div class="stat-label">日均碳排放 (kg)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="trees-needed">0</div>
+                <div class="stat-label">需要种植的树木</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="car-equivalent">0</div>
+                <div class="stat-label">相当于开车 (km)</div>
+            </div>
+        </div>
+
+        <div class="loading-spinner" id="loading-spinner"></div>
+
+        <!-- 可视化区域 -->
+        <div class="visualization-container">
+            <!-- 饮食构成图 -->
+            <div class="chart-box">
+                <h3>🍽️ 饮食碳足迹构成</h3>
+                <canvas id="diet-composition-chart"></canvas>
+            </div>
+
+            <!-- 食物消费量图 -->
+            <div class="chart-box">
+                <h3>📊 年度食物消费量</h3>
+                <canvas id="diet-consumption-chart"></canvas>
+            </div>
+
+            <!-- 对比图 -->
+            <div class="chart-box full-width">
+                <h3>📈 不同饮食模式碳足迹对比</h3>
+                <canvas id="diet-comparison-chart"></canvas>
+            </div>
+
+            <!-- 趋势图 -->
+            <div class="chart-box full-width">
+                <h3>📉 如果改变饮食习惯...</h3>
+                <canvas id="diet-impact-chart"></canvas>
+            </div>
+        </div>
+
+        <!-- 建议面板 -->
+        <div class="info-panel-enhanced">
+            <h3>💡 减少饮食碳足迹的建议</h3>
+            <div class="tips-grid" id="tips-container">
+                <div class="tip-card">
+                    <span class="tip-icon">🥦</span>
+                    <div class="tip-title">多吃蔬菜</div>
+                    <div>增加蔬菜摄入，减少肉类消费</div>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">🏪</span>
+                    <div class="tip-title">选择本地食材</div>
+                    <div>购买本地生产的食物，减少运输排放</div>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">♻️</span>
+                    <div class="tip-title">减少食物浪费</div>
+                    <div>合理规划饮食，避免食物浪费</div>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">🌾</span>
+                    <div class="tip-title">选择有机食品</div>
+                    <div>支持可持续农业，选择有机种植的食物</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>数据基于平均值估算，实际碳足迹可能因个人饮食习惯、食物来源等因素而异。</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/diet_simulator_enhanced.js"></script>
+</body>
+</html> 
