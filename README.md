@@ -11,13 +11,13 @@
 
 ## 🚀 在线访问
 
-访问 [GitHub Pages 链接] 查看在线演示
+访问 [https://nanxingw.github.io/food_carbon_footprint/](https://nanxingw.github.io/food_carbon_footprint/) 查看在线演示
 
 ## 💻 本地运行
 
 1. 克隆仓库：
 ```bash
-git clone [您的仓库地址]
+git clone https://github.com/nanxingw/food_carbon_footprint.git
 ```
 
 2. 使用本地服务器运行（推荐）：
