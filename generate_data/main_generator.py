@@ -2,6 +2,8 @@ import json
 import random
 from math import radians, sin, cos, sqrt, atan2
 import os
+import math
+from datetime import datetime, timedelta
 
 # --- 配置项 ---
 NUM_FOODS_TO_GENERATE = 20
@@ -287,6 +289,290 @@ def generate_all_data():
         json.dump(food_nutrients_carbon_data, f, ensure_ascii=False, indent=4)
     print(f"Generated {nutrients_file_path} with {len(food_nutrients_carbon_data)} food items.")
 
+# 添加新的数据生成功能
+
+def generate_3d_earth_data():
+    """生成3D地球可视化所需的数据"""
+    earth_data = {
+        "transport_paths": [],
+        "real_time_vessels": [],
+        "weather_conditions": [],
+        "port_activities": []
+    }
+    
+    # 生成运输路径的3D坐标
+    major_routes = [
+        {"from": {"lat": 35.6762, "lon": 139.6503, "name": "东京"}, 
+         "to": {"lat": 34.0522, "lon": -118.2437, "name": "洛杉矶"},
+         "mode": "ship", "goods": "海鲜", "carbon_intensity": 0.012},
+        {"from": {"lat": -33.8688, "lon": 151.2093, "name": "悉尼"}, 
+         "to": {"lat": 31.2304, "lon": 121.4737, "name": "上海"},
+         "mode": "air", "goods": "牛肉", "carbon_intensity": 0.642},
+        {"from": {"lat": -15.7801, "lon": -47.9292, "name": "巴西利亚"}, 
+         "to": {"lat": 51.5074, "lon": -0.1278, "name": "伦敦"},
+         "mode": "ship", "goods": "咖啡豆", "carbon_intensity": 0.008}
+    ]
+    
+    for route in major_routes:
+        # 生成曲线路径点
+        num_points = 50
+        path_points = []
+        for i in range(num_points):
+            t = i / (num_points - 1)
+            # 使用贝塞尔曲线生成平滑路径
+            lat = route["from"]["lat"] * (1-t) + route["to"]["lat"] * t
+            lon = route["from"]["lon"] * (1-t) + route["to"]["lon"] * t
+            # 添加高度变化（模拟飞行或航行）
+            height = math.sin(t * math.pi) * 0.1 if route["mode"] == "air" else 0
+            path_points.append({
+                "lat": lat,
+                "lon": lon,
+                "height": height,
+                "progress": t
+            })
+        
+        earth_data["transport_paths"].append({
+            "id": f"route_{len(earth_data['transport_paths'])}",
+            "from": route["from"],
+            "to": route["to"],
+            "path": path_points,
+            "mode": route["mode"],
+            "goods": route["goods"],
+            "carbon_per_km": route["carbon_intensity"],
+            "total_distance": calculate_distance(route["from"], route["to"]),
+            "animation_duration": random.randint(5000, 15000)  # 毫秒
+        })
+    
+    # 生成实时运输工具位置
+    for i in range(20):
+        earth_data["real_time_vessels"].append({
+            "id": f"vessel_{i}",
+            "type": random.choice(["cargo_ship", "airplane", "truck"]),
+            "position": {
+                "lat": random.uniform(-90, 90),
+                "lon": random.uniform(-180, 180)
+            },
+            "heading": random.uniform(0, 360),
+            "speed": random.uniform(10, 50),  # km/h
+            "cargo": random.choice(["水果", "蔬菜", "肉类", "谷物"]),
+            "carbon_rate": random.uniform(0.01, 0.5)
+        })
+    
+    return earth_data
+
+def generate_timeline_data():
+    """生成时间线数据，展示饮食碳足迹的历史变化"""
+    timeline_data = {
+        "historical_data": [],
+        "future_projections": [],
+        "key_events": []
+    }
+    
+    # 历史数据（1950-2024）
+    base_year = 1950
+    for year in range(base_year, 2025, 5):
+        # 模拟历史趋势
+        meat_consumption = 20 + (year - base_year) * 0.5  # kg/人/年
+        carbon_per_capita = 1.5 + (year - base_year) * 0.02
+        
+        timeline_data["historical_data"].append({
+            "year": year,
+            "global_average": {
+                "meat_consumption": meat_consumption,
+                "plant_consumption": 150 - (year - base_year) * 0.3,
+                "carbon_footprint": carbon_per_capita,
+                "population": 2.5e9 + (year - base_year) * 0.08e9
+            },
+            "diet_types": {
+                "high_meat": {
+                    "percentage": 20 + (year - base_year) * 0.1,
+                    "carbon": carbon_per_capita * 1.5
+                },
+                "balanced": {
+                    "percentage": 50 - (year - base_year) * 0.1,
+                    "carbon": carbon_per_capita
+                },
+                "vegetarian": {
+                    "percentage": 25,
+                    "carbon": carbon_per_capita * 0.7
+                },
+                "vegan": {
+                    "percentage": 5 + (year - base_year) * 0.05,
+                    "carbon": carbon_per_capita * 0.6
+                }
+            }
+        })
+    
+    # 未来预测（2025-2050）
+    for year in range(2025, 2055, 5):
+        years_ahead = year - 2024
+        # 乐观、中性、悲观三种情景
+        scenarios = {
+            "optimistic": {
+                "carbon_reduction": years_ahead * 0.02,
+                "plant_based_growth": years_ahead * 0.5
+            },
+            "neutral": {
+                "carbon_reduction": years_ahead * 0.01,
+                "plant_based_growth": years_ahead * 0.3
+            },
+            "pessimistic": {
+                "carbon_reduction": -years_ahead * 0.01,
+                "plant_based_growth": years_ahead * 0.1
+            }
+        }
+        
+        timeline_data["future_projections"].append({
+            "year": year,
+            "scenarios": scenarios
+        })
+    
+    # 关键事件
+    timeline_data["key_events"] = [
+        {"year": 1971, "event": "第一个地球日", "impact": "environmental_awareness"},
+        {"year": 1992, "event": "里约地球峰会", "impact": "sustainable_development"},
+        {"year": 2015, "event": "巴黎气候协定", "impact": "carbon_reduction_goals"},
+        {"year": 2019, "event": "人造肉商业化", "impact": "alternative_protein"}
+    ]
+    
+    return timeline_data
+
+def generate_global_heatmap_data():
+    """生成全球饮食碳足迹热力图数据"""
+    countries_data = []
+    
+    # 主要国家和地区的数据
+    country_profiles = [
+        {"code": "CHN", "name": "中国", "lat": 35.8617, "lon": 104.1954, 
+         "diet_profile": {"meat": 60, "plant": 40}, "trend": "increasing"},
+        {"code": "USA", "name": "美国", "lat": 37.0902, "lon": -95.7129, 
+         "diet_profile": {"meat": 80, "plant": 20}, "trend": "stable"},
+        {"code": "IND", "name": "印度", "lat": 20.5937, "lon": 78.9629, 
+         "diet_profile": {"meat": 20, "plant": 80}, "trend": "stable"},
+        {"code": "BRA", "name": "巴西", "lat": -14.2350, "lon": -51.9253, 
+         "diet_profile": {"meat": 70, "plant": 30}, "trend": "increasing"},
+        {"code": "DEU", "name": "德国", "lat": 51.1657, "lon": 10.4515, 
+         "diet_profile": {"meat": 60, "plant": 40}, "trend": "decreasing"}
+    ]
+    
+    for country in country_profiles:
+        # 计算碳足迹
+        meat_carbon = country["diet_profile"]["meat"] * 0.027  # kg CO2/kg
+        plant_carbon = country["diet_profile"]["plant"] * 0.002
+        total_carbon = meat_carbon + plant_carbon
+        
+        # 生成历史数据
+        historical = []
+        for year in range(2010, 2025):
+            yearly_carbon = total_carbon + random.uniform(-0.5, 0.5)
+            if country["trend"] == "increasing":
+                yearly_carbon += (year - 2010) * 0.05
+            elif country["trend"] == "decreasing":
+                yearly_carbon -= (year - 2010) * 0.03
+            
+            historical.append({
+                "year": year,
+                "carbon_per_capita": yearly_carbon,
+                "meat_percentage": country["diet_profile"]["meat"] + random.uniform(-5, 5)
+            })
+        
+        countries_data.append({
+            "country_code": country["code"],
+            "country_name": country["name"],
+            "coordinates": {"lat": country["lat"], "lon": country["lon"]},
+            "current_carbon_footprint": total_carbon,
+            "diet_composition": country["diet_profile"],
+            "trend": country["trend"],
+            "historical_data": historical,
+            "population": random.randint(10000000, 1400000000),
+            "urbanization_rate": random.uniform(0.3, 0.9)
+        })
+    
+    return {
+        "countries": countries_data,
+        "global_statistics": {
+            "average_carbon_footprint": 2.5,
+            "total_emissions": 3.3e9,  # 吨CO2
+            "year": 2024
+        },
+        "color_scale": {
+            "min": 0.5,
+            "max": 4.0,
+            "unit": "吨CO2/人/年"
+        }
+    }
+
+def generate_particle_system_data():
+    """生成粒子系统数据，用于展示食物浪费等效果"""
+    particle_data = {
+        "waste_particles": [],
+        "emission_particles": [],
+        "savings_particles": []
+    }
+    
+    # 浪费粒子
+    food_types = ["苹果", "面包", "牛奶", "蔬菜", "肉类"]
+    for i in range(100):
+        particle_data["waste_particles"].append({
+            "id": i,
+            "type": random.choice(food_types),
+            "size": random.uniform(0.5, 2.0),
+            "initial_position": {
+                "x": random.uniform(-50, 50),
+                "y": random.uniform(0, 100),
+                "z": random.uniform(-50, 50)
+            },
+            "velocity": {
+                "x": random.uniform(-1, 1),
+                "y": random.uniform(-2, -0.5),
+                "z": random.uniform(-1, 1)
+            },
+            "carbon_value": random.uniform(0.1, 5.0),
+            "lifetime": random.uniform(3000, 8000)  # 毫秒
+        })
+    
+    return particle_data
+
+def calculate_distance(coord1, coord2):
+    """计算两个坐标之间的距离（公里）"""
+    R = 6371  # 地球半径
+    lat1, lon1 = math.radians(coord1["lat"]), math.radians(coord1["lon"])
+    lat2, lon2 = math.radians(coord2["lat"]), math.radians(coord2["lon"])
+    
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+    
+    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon/2)**2
+    c = 2 * math.asin(math.sqrt(a))
+    
+    return R * c
+
+# 在主生成函数中添加新的数据生成
+def generate_all_enhanced_data():
+    """生成所有增强版数据"""
+    print("生成3D地球可视化数据...")
+    earth_data = generate_3d_earth_data()
+    with open('../data/earth_3d_data.json', 'w', encoding='utf-8') as f:
+        json.dump(earth_data, f, ensure_ascii=False, indent=2)
+    
+    print("生成时间线数据...")
+    timeline_data = generate_timeline_data()
+    with open('../data/timeline_data.json', 'w', encoding='utf-8') as f:
+        json.dump(timeline_data, f, ensure_ascii=False, indent=2)
+    
+    print("生成全球热力图数据...")
+    heatmap_data = generate_global_heatmap_data()
+    with open('../data/global_heatmap_data.json', 'w', encoding='utf-8') as f:
+        json.dump(heatmap_data, f, ensure_ascii=False, indent=2)
+    
+    print("生成粒子系统数据...")
+    particle_data = generate_particle_system_data()
+    with open('../data/particle_system_data.json', 'w', encoding='utf-8') as f:
+        json.dump(particle_data, f, ensure_ascii=False, indent=2)
+    
+    print("增强版数据生成完成！")
+
 if __name__ == "__main__":
     generate_all_data()
     print(f"All data generation complete. Files saved in {os.path.abspath(OUTPUT_DATA_DIR)}")
+    generate_all_enhanced_data()

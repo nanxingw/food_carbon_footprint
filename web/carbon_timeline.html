@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>碳足迹时光机 - 舌尖上的足迹</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* 主标题 */
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-title {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #4caf50, #8bc34a, #cddc39);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
+            to { text-shadow: 0 0 30px rgba(76, 175, 80, 0.8), 0 0 40px rgba(76, 175, 80, 0.6); }
+        }
+
+        /* 时间轴容器 */
+        .timeline-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* 时间控制器 */
+        .time-controller {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .year-display {
+            text-align: center;
+            font-size: 5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4caf50;
+            text-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+            font-family: 'Orbitron', monospace;
+        }
+
+        .timeline-slider {
+            width: 100%;
+            height: 10px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: linear-gradient(to right, #4caf50 0%, #ff9800 50%, #f44336 100%);
+            border-radius: 5px;
+            outline: none;
+            margin: 20px 0;
+        }
+
+        .timeline-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+        }
+
+        /* 时间标记 */
+        .timeline-marks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 数据可视化区域 */
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .viz-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viz-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #4caf50, #ff9800, #f44336);
+            border-radius: 15px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .viz-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .viz-card h3 {
+            margin: 0 0 20px 0;
+            color: #81c784;
+            font-size: 1.5em;
+        }
+
+        /* 事件标记 */
+        .events-timeline {
+            position: relative;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .events-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 10%, 
+                rgba(255, 255, 255, 0.3) 90%, 
+                transparent 100%);
+        }
+
+        .event-marker {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #ff9800;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .event-marker:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.8);
+        }
+
+        .event-tooltip {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .event-marker:hover .event-tooltip {
+            opacity: 1;
+        }
+
+        /* 未来场景选择 */
+        .scenario-selector {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .scenario-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .scenario-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scenario-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.3s ease;
+        }
+
+        .scenario-btn:hover::before {
+            left: 100%;
+        }
+
+        .scenario-btn.optimistic {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+        }
+
+        .scenario-btn.neutral {
+            background: linear-gradient(135deg, #ff9800, #ffc107);
+        }
+
+        .scenario-btn.pessimistic {
+            background: linear-gradient(135deg, #f44336, #e91e63);
+        }
+
+        .scenario-btn.active {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #4caf50;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .stat-trend {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .trend-up {
+            color: #f44336;
+        }
+
+        .trend-down {
+            color: #4caf50;
+        }
+
+        /* 返回按钮 */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* 图表容器 */
+        .chart-container {
+            height: 400px;
+            position: relative;
+        }
+
+        /* 加载动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+            
+            .year-display {
+                font-size: 3em;
+            }
+            
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .scenario-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-button">🏠 返回主导航页</a>
+
+    <!-- 主标题 -->
+    <section class="hero-section">
+        <h1 class="hero-title">⏰ 碳足迹时光机</h1>
+        <p style="font-size: 1.2em; color: rgba(255, 255, 255, 0.8);">
+            穿越时空，见证人类饮食碳足迹的演变历程
+        </p>
+    </section>
+
+    <div class="timeline-container">
+        <!-- 时间控制器 -->
+        <div class="time-controller fade-in">
+            <div class="year-display" id="current-year">2024</div>
+            <input type="range" class="timeline-slider" id="year-slider" 
+                   min="1950" max="2050" value="2024" step="1">
+            <div class="timeline-marks">
+                <span>1950</span>
+                <span>1975</span>
+                <span>2000</span>
+                <span>2024</span>
+                <span>2050</span>
+            </div>
+        </div>
+
+        <!-- 统计数据 -->
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-card fade-in">
+                <div class="stat-value" id="global-carbon">2.5</div>
+                <div class="stat-label">全球人均碳足迹</div>
+                <div class="stat-trend" id="carbon-trend">吨CO₂/年</div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.1s;">
+                <div class="stat-value" id="meat-consumption">57.5</div>
+                <div class="stat-label">肉类消费量</div>
+                <div class="stat-trend">kg/人/年</div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.2s;">
+                <div class="stat-value" id="plant-consumption">127.5</div>
+                <div class="stat-label">植物性食物消费</div>
+                <div class="stat-trend">kg/人/年</div>
+            </div>
+            <div class="stat-card fade-in" style="animation-delay: 0.3s;">
+                <div class="stat-value" id="population">8.0</div>
+                <div class="stat-label">全球人口</div>
+                <div class="stat-trend">十亿人</div>
+            </div>
+        </div>
+
+        <!-- 场景选择器（仅在未来时显示） -->
+        <div class="scenario-selector" id="scenario-selector" style="display: none;">
+            <h3>选择未来场景</h3>
+            <div class="scenario-buttons">
+                <button class="scenario-btn optimistic" data-scenario="optimistic">
+                    🌱 乐观场景
+                </button>
+                <button class="scenario-btn neutral active" data-scenario="neutral">
+                    ⚖️ 中性场景
+                </button>
+                <button class="scenario-btn pessimistic" data-scenario="pessimistic">
+                    🏭 悲观场景
+                </button>
+            </div>
+        </div>
+
+        <!-- 数据可视化 -->
+        <div class="visualization-grid">
+            <div class="viz-card fade-in">
+                <h3>🍖 饮食结构变化</h3>
+                <div class="chart-container">
+                    <canvas id="diet-structure-chart"></canvas>
+                </div>
+            </div>
+            <div class="viz-card fade-in" style="animation-delay: 0.1s;">
+                <h3>📈 碳足迹趋势</h3>
+                <div class="chart-container">
+                    <canvas id="carbon-trend-chart"></canvas>
+                </div>
+            </div>
+            <div class="viz-card fade-in" style="animation-delay: 0.2s;">
+                <h3>🌍 饮食类型分布</h3>
+                <div class="chart-container">
+                    <canvas id="diet-types-chart"></canvas>
+                </div>
+            </div>
+            <div class="viz-card fade-in" style="animation-delay: 0.3s;">
+                <h3>📊 消费量对比</h3>
+                <div class="chart-container">
+                    <canvas id="consumption-comparison-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- 历史事件时间轴 -->
+        <div class="events-timeline">
+            <div class="events-line"></div>
+            <div id="event-markers"></div>
+        </div>
+
+        <!-- 详细信息面板 -->
+        <div class="viz-card fade-in" style="animation-delay: 0.4s;">
+            <h3>📝 时代背景</h3>
+            <div id="era-description">
+                <p>2024年：全球饮食模式正在经历重大转变。植物基食品创新不断涌现，
+                环保意识日益增强，但肉类消费在许多地区仍然居高不下。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入Chart.js和GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/carbon_timeline.js"></script>
+</body>
+</html> 

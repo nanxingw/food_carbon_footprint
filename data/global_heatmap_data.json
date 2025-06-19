@@ -1,0 +1,479 @@
+{
+  "countries": [
+    {
+      "country_code": "CHN",
+      "country_name": "中国",
+      "coordinates": {
+        "lat": 35.8617,
+        "lon": 104.1954
+      },
+      "current_carbon_footprint": 1.7,
+      "diet_composition": {
+        "meat": 60,
+        "plant": 40
+      },
+      "trend": "increasing",
+      "historical_data": [
+        {
+          "year": 2010,
+          "carbon_per_capita": 1.671621877285635,
+          "meat_percentage": 60.08051105394276
+        },
+        {
+          "year": 2011,
+          "carbon_per_capita": 1.9564762991707576,
+          "meat_percentage": 55.42387728086561
+        },
+        {
+          "year": 2012,
+          "carbon_per_capita": 1.5568581862599362,
+          "meat_percentage": 59.675564623792695
+        },
+        {
+          "year": 2013,
+          "carbon_per_capita": 1.4863273638544285,
+          "meat_percentage": 61.47906854499041
+        },
+        {
+          "year": 2014,
+          "carbon_per_capita": 1.7497825488215317,
+          "meat_percentage": 62.345735571752435
+        },
+        {
+          "year": 2015,
+          "carbon_per_capita": 1.525367006613629,
+          "meat_percentage": 58.45110723021086
+        },
+        {
+          "year": 2016,
+          "carbon_per_capita": 2.312416857827464,
+          "meat_percentage": 55.54562582047974
+        },
+        {
+          "year": 2017,
+          "carbon_per_capita": 1.890848969986465,
+          "meat_percentage": 63.22130674565661
+        },
+        {
+          "year": 2018,
+          "carbon_per_capita": 1.9145011940058216,
+          "meat_percentage": 61.95735888134571
+        },
+        {
+          "year": 2019,
+          "carbon_per_capita": 1.9672101568199987,
+          "meat_percentage": 56.07817906189814
+        },
+        {
+          "year": 2020,
+          "carbon_per_capita": 2.6352795626021908,
+          "meat_percentage": 58.79129944007666
+        },
+        {
+          "year": 2021,
+          "carbon_per_capita": 2.5797232832812025,
+          "meat_percentage": 55.424561191610174
+        },
+        {
+          "year": 2022,
+          "carbon_per_capita": 2.454586521120275,
+          "meat_percentage": 59.942800656956834
+        },
+        {
+          "year": 2023,
+          "carbon_per_capita": 2.114285355873901,
+          "meat_percentage": 57.45720834643566
+        },
+        {
+          "year": 2024,
+          "carbon_per_capita": 2.698157639763097,
+          "meat_percentage": 60.124504388300544
+        }
+      ],
+      "population": 278147899,
+      "urbanization_rate": 0.7826829890289779
+    },
+    {
+      "country_code": "USA",
+      "country_name": "美国",
+      "coordinates": {
+        "lat": 37.0902,
+        "lon": -95.7129
+      },
+      "current_carbon_footprint": 2.2,
+      "diet_composition": {
+        "meat": 80,
+        "plant": 20
+      },
+      "trend": "stable",
+      "historical_data": [
+        {
+          "year": 2010,
+          "carbon_per_capita": 2.0190379623259624,
+          "meat_percentage": 82.79736106899675
+        },
+        {
+          "year": 2011,
+          "carbon_per_capita": 2.0259701669983925,
+          "meat_percentage": 79.64668292674939
+        },
+        {
+          "year": 2012,
+          "carbon_per_capita": 2.2895408338273326,
+          "meat_percentage": 82.0887970062621
+        },
+        {
+          "year": 2013,
+          "carbon_per_capita": 2.302677472823169,
+          "meat_percentage": 84.55839019862005
+        },
+        {
+          "year": 2014,
+          "carbon_per_capita": 2.381924887907942,
+          "meat_percentage": 77.29237757992489
+        },
+        {
+          "year": 2015,
+          "carbon_per_capita": 2.664397420740802,
+          "meat_percentage": 82.07230935172096
+        },
+        {
+          "year": 2016,
+          "carbon_per_capita": 2.2796061731017487,
+          "meat_percentage": 77.14389186444232
+        },
+        {
+          "year": 2017,
+          "carbon_per_capita": 1.9405518054139006,
+          "meat_percentage": 78.16804498556522
+        },
+        {
+          "year": 2018,
+          "carbon_per_capita": 2.590434725855797,
+          "meat_percentage": 78.2553792751354
+        },
+        {
+          "year": 2019,
+          "carbon_per_capita": 2.232310523980206,
+          "meat_percentage": 79.37494593759308
+        },
+        {
+          "year": 2020,
+          "carbon_per_capita": 1.8472957955405716,
+          "meat_percentage": 78.14778021228503
+        },
+        {
+          "year": 2021,
+          "carbon_per_capita": 2.591061639493503,
+          "meat_percentage": 76.44027977245572
+        },
+        {
+          "year": 2022,
+          "carbon_per_capita": 2.266227465891596,
+          "meat_percentage": 78.33197409761681
+        },
+        {
+          "year": 2023,
+          "carbon_per_capita": 2.336971983404308,
+          "meat_percentage": 76.48473586865744
+        },
+        {
+          "year": 2024,
+          "carbon_per_capita": 2.6521650285094673,
+          "meat_percentage": 83.99603974696387
+        }
+      ],
+      "population": 1109756806,
+      "urbanization_rate": 0.48996447095546236
+    },
+    {
+      "country_code": "IND",
+      "country_name": "印度",
+      "coordinates": {
+        "lat": 20.5937,
+        "lon": 78.9629
+      },
+      "current_carbon_footprint": 0.7000000000000001,
+      "diet_composition": {
+        "meat": 20,
+        "plant": 80
+      },
+      "trend": "stable",
+      "historical_data": [
+        {
+          "year": 2010,
+          "carbon_per_capita": 1.0554060376404801,
+          "meat_percentage": 21.200006448969415
+        },
+        {
+          "year": 2011,
+          "carbon_per_capita": 0.3129653631274999,
+          "meat_percentage": 22.775411770388345
+        },
+        {
+          "year": 2012,
+          "carbon_per_capita": 0.7810203512167724,
+          "meat_percentage": 19.877489259649668
+        },
+        {
+          "year": 2013,
+          "carbon_per_capita": 0.8664255799530132,
+          "meat_percentage": 15.125933982622064
+        },
+        {
+          "year": 2014,
+          "carbon_per_capita": 0.6733146456433449,
+          "meat_percentage": 19.425661387147315
+        },
+        {
+          "year": 2015,
+          "carbon_per_capita": 0.8180360948221348,
+          "meat_percentage": 18.21063887490067
+        },
+        {
+          "year": 2016,
+          "carbon_per_capita": 1.0866977107831068,
+          "meat_percentage": 23.529019768352896
+        },
+        {
+          "year": 2017,
+          "carbon_per_capita": 0.6365089799994659,
+          "meat_percentage": 17.758648432707062
+        },
+        {
+          "year": 2018,
+          "carbon_per_capita": 1.1815691053269546,
+          "meat_percentage": 17.50102977870469
+        },
+        {
+          "year": 2019,
+          "carbon_per_capita": 0.21836737470945056,
+          "meat_percentage": 20.926535659192332
+        },
+        {
+          "year": 2020,
+          "carbon_per_capita": 1.1110356862147799,
+          "meat_percentage": 21.404515920730788
+        },
+        {
+          "year": 2021,
+          "carbon_per_capita": 0.3364662117789189,
+          "meat_percentage": 18.449110488876695
+        },
+        {
+          "year": 2022,
+          "carbon_per_capita": 0.26939409893768396,
+          "meat_percentage": 15.664207992664572
+        },
+        {
+          "year": 2023,
+          "carbon_per_capita": 1.1037544542026385,
+          "meat_percentage": 20.344262371231537
+        },
+        {
+          "year": 2024,
+          "carbon_per_capita": 0.7887085527731064,
+          "meat_percentage": 16.207820492210047
+        }
+      ],
+      "population": 1202620172,
+      "urbanization_rate": 0.6373612334414402
+    },
+    {
+      "country_code": "BRA",
+      "country_name": "巴西",
+      "coordinates": {
+        "lat": -14.235,
+        "lon": -51.9253
+      },
+      "current_carbon_footprint": 1.95,
+      "diet_composition": {
+        "meat": 70,
+        "plant": 30
+      },
+      "trend": "increasing",
+      "historical_data": [
+        {
+          "year": 2010,
+          "carbon_per_capita": 1.533139156974265,
+          "meat_percentage": 73.23075981949866
+        },
+        {
+          "year": 2011,
+          "carbon_per_capita": 2.0403872725850447,
+          "meat_percentage": 65.81673738466246
+        },
+        {
+          "year": 2012,
+          "carbon_per_capita": 1.8938259043890642,
+          "meat_percentage": 67.56597446221697
+        },
+        {
+          "year": 2013,
+          "carbon_per_capita": 2.4802806841518947,
+          "meat_percentage": 72.53366698811752
+        },
+        {
+          "year": 2014,
+          "carbon_per_capita": 2.3100657890651664,
+          "meat_percentage": 68.49018160517036
+        },
+        {
+          "year": 2015,
+          "carbon_per_capita": 2.327560701842247,
+          "meat_percentage": 66.93969709800864
+        },
+        {
+          "year": 2016,
+          "carbon_per_capita": 2.237369581423529,
+          "meat_percentage": 65.38499251575125
+        },
+        {
+          "year": 2017,
+          "carbon_per_capita": 2.5683585044719472,
+          "meat_percentage": 71.53440650011109
+        },
+        {
+          "year": 2018,
+          "carbon_per_capita": 2.220993171811451,
+          "meat_percentage": 71.17217636570487
+        },
+        {
+          "year": 2019,
+          "carbon_per_capita": 1.9784677917966265,
+          "meat_percentage": 68.61477780956548
+        },
+        {
+          "year": 2020,
+          "carbon_per_capita": 2.119198478639753,
+          "meat_percentage": 73.33366645296836
+        },
+        {
+          "year": 2021,
+          "carbon_per_capita": 2.9155567349478,
+          "meat_percentage": 69.43545737601353
+        },
+        {
+          "year": 2022,
+          "carbon_per_capita": 2.1262250168464467,
+          "meat_percentage": 69.7219223023782
+        },
+        {
+          "year": 2023,
+          "carbon_per_capita": 2.3769768579239523,
+          "meat_percentage": 65.2378426258375
+        },
+        {
+          "year": 2024,
+          "carbon_per_capita": 2.43801303376366,
+          "meat_percentage": 69.05623411888838
+        }
+      ],
+      "population": 233658626,
+      "urbanization_rate": 0.3279319924547185
+    },
+    {
+      "country_code": "DEU",
+      "country_name": "德国",
+      "coordinates": {
+        "lat": 51.1657,
+        "lon": 10.4515
+      },
+      "current_carbon_footprint": 1.7,
+      "diet_composition": {
+        "meat": 60,
+        "plant": 40
+      },
+      "trend": "decreasing",
+      "historical_data": [
+        {
+          "year": 2010,
+          "carbon_per_capita": 2.0059630286671943,
+          "meat_percentage": 56.335426218926486
+        },
+        {
+          "year": 2011,
+          "carbon_per_capita": 1.5065268129448335,
+          "meat_percentage": 64.8643905793723
+        },
+        {
+          "year": 2012,
+          "carbon_per_capita": 1.8501192587154693,
+          "meat_percentage": 61.17886146866092
+        },
+        {
+          "year": 2013,
+          "carbon_per_capita": 1.2329548179611354,
+          "meat_percentage": 64.74691403382371
+        },
+        {
+          "year": 2014,
+          "carbon_per_capita": 1.8586588770867691,
+          "meat_percentage": 60.16562307822805
+        },
+        {
+          "year": 2015,
+          "carbon_per_capita": 1.5254054773318317,
+          "meat_percentage": 60.06186356195835
+        },
+        {
+          "year": 2016,
+          "carbon_per_capita": 1.4851302943784785,
+          "meat_percentage": 55.1142183410267
+        },
+        {
+          "year": 2017,
+          "carbon_per_capita": 1.0915836103618253,
+          "meat_percentage": 64.50763463114129
+        },
+        {
+          "year": 2018,
+          "carbon_per_capita": 0.9614032630014149,
+          "meat_percentage": 58.21408359139776
+        },
+        {
+          "year": 2019,
+          "carbon_per_capita": 0.9645272212344491,
+          "meat_percentage": 57.99678626072225
+        },
+        {
+          "year": 2020,
+          "carbon_per_capita": 1.706068359895762,
+          "meat_percentage": 63.41909673017177
+        },
+        {
+          "year": 2021,
+          "carbon_per_capita": 1.598820886693864,
+          "meat_percentage": 63.168347421976335
+        },
+        {
+          "year": 2022,
+          "carbon_per_capita": 1.1641357542812996,
+          "meat_percentage": 56.914900527615245
+        },
+        {
+          "year": 2023,
+          "carbon_per_capita": 0.9975692877661088,
+          "meat_percentage": 57.20517657652267
+        },
+        {
+          "year": 2024,
+          "carbon_per_capita": 0.9154791685944492,
+          "meat_percentage": 59.81439243380767
+        }
+      ],
+      "population": 714846711,
+      "urbanization_rate": 0.682107351830763
+    }
+  ],
+  "global_statistics": {
+    "average_carbon_footprint": 2.5,
+    "total_emissions": 3300000000.0,
+    "year": 2024
+  },
+  "color_scale": {
+    "min": 0.5,
+    "max": 4.0,
+    "unit": "吨CO2/人/年"
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "historical_data": [
+    {
+      "year": 1950,
+      "global_average": {
+        "meat_consumption": 20.0,
+        "plant_consumption": 150.0,
+        "carbon_footprint": 1.5,
+        "population": 2500000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 20.0,
+          "carbon": 2.25
+        },
+        "balanced": {
+          "percentage": 50.0,
+          "carbon": 1.5
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.0499999999999998
+        },
+        "vegan": {
+          "percentage": 5.0,
+          "carbon": 0.8999999999999999
+        }
+      }
+    },
+    {
+      "year": 1955,
+      "global_average": {
+        "meat_consumption": 22.5,
+        "plant_consumption": 148.5,
+        "carbon_footprint": 1.6,
+        "population": 2900000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 20.5,
+          "carbon": 2.4000000000000004
+        },
+        "balanced": {
+          "percentage": 49.5,
+          "carbon": 1.6
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.1199999999999999
+        },
+        "vegan": {
+          "percentage": 5.25,
+          "carbon": 0.96
+        }
+      }
+    },
+    {
+      "year": 1960,
+      "global_average": {
+        "meat_consumption": 25.0,
+        "plant_consumption": 147.0,
+        "carbon_footprint": 1.7,
+        "population": 3300000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 21.0,
+          "carbon": 2.55
+        },
+        "balanced": {
+          "percentage": 49.0,
+          "carbon": 1.7
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.19
+        },
+        "vegan": {
+          "percentage": 5.5,
+          "carbon": 1.02
+        }
+      }
+    },
+    {
+      "year": 1965,
+      "global_average": {
+        "meat_consumption": 27.5,
+        "plant_consumption": 145.5,
+        "carbon_footprint": 1.8,
+        "population": 3700000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 21.5,
+          "carbon": 2.7
+        },
+        "balanced": {
+          "percentage": 48.5,
+          "carbon": 1.8
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.26
+        },
+        "vegan": {
+          "percentage": 5.75,
+          "carbon": 1.08
+        }
+      }
+    },
+    {
+      "year": 1970,
+      "global_average": {
+        "meat_consumption": 30.0,
+        "plant_consumption": 144.0,
+        "carbon_footprint": 1.9,
+        "population": 4100000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 22.0,
+          "carbon": 2.8499999999999996
+        },
+        "balanced": {
+          "percentage": 48.0,
+          "carbon": 1.9
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.3299999999999998
+        },
+        "vegan": {
+          "percentage": 6.0,
+          "carbon": 1.14
+        }
+      }
+    },
+    {
+      "year": 1975,
+      "global_average": {
+        "meat_consumption": 32.5,
+        "plant_consumption": 142.5,
+        "carbon_footprint": 2.0,
+        "population": 4500000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 22.5,
+          "carbon": 3.0
+        },
+        "balanced": {
+          "percentage": 47.5,
+          "carbon": 2.0
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.4
+        },
+        "vegan": {
+          "percentage": 6.25,
+          "carbon": 1.2
+        }
+      }
+    },
+    {
+      "year": 1980,
+      "global_average": {
+        "meat_consumption": 35.0,
+        "plant_consumption": 141.0,
+        "carbon_footprint": 2.1,
+        "population": 4900000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 23.0,
+          "carbon": 3.1500000000000004
+        },
+        "balanced": {
+          "percentage": 47.0,
+          "carbon": 2.1
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.47
+        },
+        "vegan": {
+          "percentage": 6.5,
+          "carbon": 1.26
+        }
+      }
+    },
+    {
+      "year": 1985,
+      "global_average": {
+        "meat_consumption": 37.5,
+        "plant_consumption": 139.5,
+        "carbon_footprint": 2.2,
+        "population": 5300000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 23.5,
+          "carbon": 3.3000000000000003
+        },
+        "balanced": {
+          "percentage": 46.5,
+          "carbon": 2.2
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.54
+        },
+        "vegan": {
+          "percentage": 6.75,
+          "carbon": 1.32
+        }
+      }
+    },
+    {
+      "year": 1990,
+      "global_average": {
+        "meat_consumption": 40.0,
+        "plant_consumption": 138.0,
+        "carbon_footprint": 2.3,
+        "population": 5700000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 24.0,
+          "carbon": 3.4499999999999997
+        },
+        "balanced": {
+          "percentage": 46.0,
+          "carbon": 2.3
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.6099999999999999
+        },
+        "vegan": {
+          "percentage": 7.0,
+          "carbon": 1.38
+        }
+      }
+    },
+    {
+      "year": 1995,
+      "global_average": {
+        "meat_consumption": 42.5,
+        "plant_consumption": 136.5,
+        "carbon_footprint": 2.4,
+        "population": 6100000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 24.5,
+          "carbon": 3.5999999999999996
+        },
+        "balanced": {
+          "percentage": 45.5,
+          "carbon": 2.4
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.68
+        },
+        "vegan": {
+          "percentage": 7.25,
+          "carbon": 1.44
+        }
+      }
+    },
+    {
+      "year": 2000,
+      "global_average": {
+        "meat_consumption": 45.0,
+        "plant_consumption": 135.0,
+        "carbon_footprint": 2.5,
+        "population": 6500000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 25.0,
+          "carbon": 3.75
+        },
+        "balanced": {
+          "percentage": 45.0,
+          "carbon": 2.5
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.75
+        },
+        "vegan": {
+          "percentage": 7.5,
+          "carbon": 1.5
+        }
+      }
+    },
+    {
+      "year": 2005,
+      "global_average": {
+        "meat_consumption": 47.5,
+        "plant_consumption": 133.5,
+        "carbon_footprint": 2.6,
+        "population": 6900000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 25.5,
+          "carbon": 3.9000000000000004
+        },
+        "balanced": {
+          "percentage": 44.5,
+          "carbon": 2.6
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.8199999999999998
+        },
+        "vegan": {
+          "percentage": 7.75,
+          "carbon": 1.56
+        }
+      }
+    },
+    {
+      "year": 2010,
+      "global_average": {
+        "meat_consumption": 50.0,
+        "plant_consumption": 132.0,
+        "carbon_footprint": 2.7,
+        "population": 7300000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 26.0,
+          "carbon": 4.050000000000001
+        },
+        "balanced": {
+          "percentage": 44.0,
+          "carbon": 2.7
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.89
+        },
+        "vegan": {
+          "percentage": 8.0,
+          "carbon": 1.62
+        }
+      }
+    },
+    {
+      "year": 2015,
+      "global_average": {
+        "meat_consumption": 52.5,
+        "plant_consumption": 130.5,
+        "carbon_footprint": 2.8,
+        "population": 7700000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 26.5,
+          "carbon": 4.199999999999999
+        },
+        "balanced": {
+          "percentage": 43.5,
+          "carbon": 2.8
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 1.9599999999999997
+        },
+        "vegan": {
+          "percentage": 8.25,
+          "carbon": 1.68
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "global_average": {
+        "meat_consumption": 55.0,
+        "plant_consumption": 129.0,
+        "carbon_footprint": 2.9000000000000004,
+        "population": 8100000000.0
+      },
+      "diet_types": {
+        "high_meat": {
+          "percentage": 27.0,
+          "carbon": 4.3500000000000005
+        },
+        "balanced": {
+          "percentage": 43.0,
+          "carbon": 2.9000000000000004
+        },
+        "vegetarian": {
+          "percentage": 25,
+          "carbon": 2.0300000000000002
+        },
+        "vegan": {
+          "percentage": 8.5,
+          "carbon": 1.7400000000000002
+        }
+      }
+    }
+  ],
+  "future_projections": [
+    {
+      "year": 2025,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.02,
+          "plant_based_growth": 0.5
+        },
+        "neutral": {
+          "carbon_reduction": 0.01,
+          "plant_based_growth": 0.3
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.01,
+          "plant_based_growth": 0.1
+        }
+      }
+    },
+    {
+      "year": 2030,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.12,
+          "plant_based_growth": 3.0
+        },
+        "neutral": {
+          "carbon_reduction": 0.06,
+          "plant_based_growth": 1.7999999999999998
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.06,
+          "plant_based_growth": 0.6000000000000001
+        }
+      }
+    },
+    {
+      "year": 2035,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.22,
+          "plant_based_growth": 5.5
+        },
+        "neutral": {
+          "carbon_reduction": 0.11,
+          "plant_based_growth": 3.3
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.11,
+          "plant_based_growth": 1.1
+        }
+      }
+    },
+    {
+      "year": 2040,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.32,
+          "plant_based_growth": 8.0
+        },
+        "neutral": {
+          "carbon_reduction": 0.16,
+          "plant_based_growth": 4.8
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.16,
+          "plant_based_growth": 1.6
+        }
+      }
+    },
+    {
+      "year": 2045,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.42,
+          "plant_based_growth": 10.5
+        },
+        "neutral": {
+          "carbon_reduction": 0.21,
+          "plant_based_growth": 6.3
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.21,
+          "plant_based_growth": 2.1
+        }
+      }
+    },
+    {
+      "year": 2050,
+      "scenarios": {
+        "optimistic": {
+          "carbon_reduction": 0.52,
+          "plant_based_growth": 13.0
+        },
+        "neutral": {
+          "carbon_reduction": 0.26,
+          "plant_based_growth": 7.8
+        },
+        "pessimistic": {
+          "carbon_reduction": -0.26,
+          "plant_based_growth": 2.6
+        }
+      }
+    }
+  ],
+  "key_events": [
+    {
+      "year": 1971,
+      "event": "第一个地球日",
+      "impact": "environmental_awareness"
+    },
+    {
+      "year": 1992,
+      "event": "里约地球峰会",
+      "impact": "sustainable_development"
+    },
+    {
+      "year": 2015,
+      "event": "巴黎气候协定",
+      "impact": "carbon_reduction_goals"
+    },
+    {
+      "year": 2019,
+      "event": "人造肉商业化",
+      "impact": "alternative_protein"
+    }
+  ]
+}

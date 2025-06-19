@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球饮食碳足迹热力图 - 舌尖上的足迹</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a2e;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        /* 地图容器 */
+        #map {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* 信息面板 */
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 350px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .info-panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .info-panel h2 {
+            margin: 0 0 20px 0;
+            font-size: 24px;
+            background: linear-gradient(45deg, #4caf50, #8bc34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .country-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #4caf50;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .info-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .info-value {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .carbon-value {
+            color: #ff5252;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 82, 82, 0.5);
+        }
+
+        /* 饮食构成条 */
+        .diet-bar {
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            display: flex;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .diet-segment {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .diet-segment:hover {
+            filter: brightness(1.2);
+        }
+
+        .meat-segment {
+            background: linear-gradient(135deg, #f44336, #e91e63);
+        }
+
+        .plant-segment {
+            background: linear-gradient(135deg, #4caf50, #8bc34a);
+        }
+
+        /* 趋势指示器 */
+        .trend-indicator {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+
+        .trend-up {
+            color: #f44336;
+        }
+
+        .trend-down {
+            color: #4caf50;
+        }
+
+        .trend-stable {
+            color: #ff9800;
+        }
+
+        /* 图例 */
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .legend h3 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .legend-scale {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(to right, #4caf50 0%, #ffeb3b 25%, #ff9800 50%, #f44336 100%);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .legend-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 控制面板 */
+        .control-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .control-panel h3 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #4caf50;
+        }
+
+        .year-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .year-display {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4caf50;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .year-slider {
+            width: 150px;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .year-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #4caf50;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* 统计卡片 */
+        .global-stats {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            display: flex;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* 返回按钮 */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+            z-index: 1001;
+        }
+
+        .back-button:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #1b5e20 0%, #388e3c 100%);
+        }
+
+        /* 加载动画 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid #4caf50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 18px;
+            color: #4caf50;
+        }
+
+        /* 弹出窗口样式 */
+        .leaflet-popup-content-wrapper {
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 10px;
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .leaflet-popup-content {
+            color: white;
+            font-size: 14px;
+            margin: 15px;
+        }
+
+        .leaflet-popup-tip {
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        /* 动画效果 */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .pulse-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff5252;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        /* 时间线图表 */
+        .timeline-chart {
+            margin-top: 20px;
+            height: 150px;
+            position: relative;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .info-panel {
+                right: 10px;
+                top: 10px;
+                max-width: 280px;
+                padding: 20px;
+            }
+            
+            .control-panel {
+                left: 10px;
+                top: 60px;
+            }
+            
+            .global-stats {
+                flex-direction: column;
+                gap: 15px;
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .legend {
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载画面 -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">正在加载全球数据...</div>
+        </div>
+    </div>
+
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-button">🏠 返回主导航页</a>
+
+    <!-- 地图容器 -->
+    <div id="map"></div>
+
+    <!-- 控制面板 -->
+    <div class="control-panel">
+        <h3>📅 时间控制</h3>
+        <div class="year-selector">
+            <span class="year-display" id="year-display">2024</span>
+            <input type="range" class="year-slider" id="year-slider" 
+                   min="2010" max="2024" value="2024" step="1">
+        </div>
+    </div>
+
+    <!-- 信息面板 -->
+    <div class="info-panel" id="info-panel">
+        <h2>🌍 全球饮食碳足迹</h2>
+        <div id="country-info">
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.6);">
+                点击地图上的国家查看详细信息
+            </p>
+        </div>
+    </div>
+
+    <!-- 图例 -->
+    <div class="legend">
+        <h3>碳足迹强度</h3>
+        <div class="legend-scale"></div>
+        <div class="legend-labels">
+            <span>低</span>
+            <span>中</span>
+            <span>高</span>
+            <span>很高</span>
+        </div>
+    </div>
+
+    <!-- 全球统计 -->
+    <div class="global-stats">
+        <div class="stat-item">
+            <div class="stat-number" id="global-average">2.5</div>
+            <div class="stat-label">全球平均 (吨CO₂/人/年)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="total-emissions">3.3</div>
+            <div class="stat-label">总排放量 (十亿吨)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="countries-count">195</div>
+            <div class="stat-label">国家/地区</div>
+        </div>
+    </div>
+
+    <!-- 引入依赖库 -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="js/global_heatmap.js"></script>
+</body>
+</html> 
